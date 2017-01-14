@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Data Management</title>
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+  <link rel="stylesheet" type="text/css" href="employee.css">
+
+
+</head>
+<body>
+  <h1>Employee Data Management</h1>
+
+  <!-- Centered Train Schedule --> 
+  <center>
+  <table style="width:80%" id="directory">
+  	<thead>
+    <tr>
+      <th id="employee">Employee Name</th>
+      <th id="role">Role</th>
+      <th id="start">Start Date</th> 
+      <th id="months-worked">Months Worked</th>
+      <th id="monthly-rate">Monthly Rate($)</th>
+      <th id="total-billed">Total Billed($)</th>
+    </tr>
+    </thead>
+   	<tbody id="add-employee-row"></tbody>
+  </table>
+  </center>
+
+  <!-- New Train Form -->
+  <form role="form" id="form-design">
+    <div class="form-group">
+      <label for="name-input">Employee Name</label><br>
+      <input class="form-control" id="name-input" type="text">
+    </div>
+    <div class="form-group">
+      <label for="role-input">Role</label><br>
+      <input class="form-control" id="role-input" type="text">
+    </div>
+    <div class="form-group">
+      <label for="start-date-input">Start Date</label><br>
+      <input class="form-control" id="start-date-input" type="text">
+    </div>
+    <div class="form-group">
+      <label for="monthly-rate-input">Monthly Rate</label><br>
+      <input class="form-control" id="monthly-rate-input" type="number">
+    </div>
+    <button class="btn btn-default" id="add-employee" type="submit">ADD</button>
+  </form>
+
+  <div id="test"></div>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script src="http://momentjs.com/downloads/moment.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+<script src="employee.js"></script>
+</html>
