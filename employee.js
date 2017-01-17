@@ -52,31 +52,33 @@ database.ref().on("value", function(snapshot) {
 	console.log(lastObj.startDate);
 	console.log(lastObj.monthlyRate);
 
-	database.ref().on("child_added", function(childSnapshot) {
+});
 
-		console.log(childSnapshot.val().name);
-		console.log(childSnapshot.val().role);
-		console.log(childSnapshot.val().startDate);
-		console.log(childSnapshot.val().monthlyRate);
+database.ref().on("child_added", function(childSnapshot) {
 
-		//append to the table
-		// $("#directory").append("")
-		var addEmployeeRow = $("#add-employee-row");
+	console.log(childSnapshot.val().name);
+	console.log(childSnapshot.val().role);
+	console.log(childSnapshot.val().startDate);
+	console.log(childSnapshot.val().monthlyRate);
 
-		var employeeData = "<tr>";
-		employeeData += "<td>" + childSnapshot.val().name + "</td>";
-		employeeData += "<td>" + childSnapshot.val().role + "</td>";
-		employeeData += "<td>" + childSnapshot.val().startDate + "</td>";
-		employeeData += "<td></td>";
-		employeeData += "<td>" + childSnapshot.val().monthlyRate + "</td>";
-		employeeData += "<td></td>";
-		employeeData += "</tr>";
+	//append to the table
+	// $("#directory").append("")
+	var addEmployeeRow = $("#add-employee-row");
 
-		addEmployeeRow.append(employeeData);
+	var employeeData = "<tr>";
+	employeeData += "<td>" + childSnapshot.val().name + "</td>";
+	employeeData += "<td>" + childSnapshot.val().role + "</td>";
+	employeeData += "<td>" + childSnapshot.val().startDate + "</td>";
+	employeeData += "<td></td>";
+	employeeData += "<td>" + childSnapshot.val().monthlyRate + "</td>";
+	employeeData += "<td></td>";
+	employeeData += "</tr>";
 
-	}, function(errorObject) {
+	addEmployeeRow.append(employeeData);
+
+}, function(errorObject) {
 		console.log("Errors handled: " + errorObject.code);
-	});
+});
 
 
 	//based on the field, order by that field (date); limit to ONE record
@@ -88,7 +90,4 @@ database.ref().on("value", function(snapshot) {
 		$("#test").append(snapshot.val().monthlyRate);
 
 	})
-
-
-});
 
